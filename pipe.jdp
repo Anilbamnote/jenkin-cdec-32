@@ -6,11 +6,12 @@ pipeline {
                 git 'https://github.com/mayurmwagh/student-ui.git'
             }
         }
-        stage('build') {
-            steps {
-             sh '/opt/apache-maven/bin/mvn clean package'
+        stage('Build') {
+           steps {
+              sh 'mvn clean install -X'
             }
         }
+
         stage('test') {
             steps {
                echo "test successful"
