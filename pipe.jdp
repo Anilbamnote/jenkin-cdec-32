@@ -6,6 +6,12 @@ pipeline {
                git 'https://github.com/mayurmwagh/student-ui.git'
             }
         }
+        stages {
+        stage('Clean Workspace') {
+            steps {
+                cleanWs()
+            }
+        }
         stage('build') {
             steps {
              sh '/opt/apache-maven/bin/mvn clean package'
