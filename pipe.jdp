@@ -8,12 +8,12 @@ pipeline {
         }
         stage('build') {
             steps {
-             echo "build successful"
+             sh '/opt/apache-maven/mvn clean package'
             }
         }
         stage('test') {
             steps {
-                sh 'mvn clean package'
+               echo "test successful"
             }
         }
         stage('deploy') {
