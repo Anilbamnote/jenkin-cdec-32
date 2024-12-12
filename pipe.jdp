@@ -3,13 +3,7 @@ pipeline {
     stages {
         stage('pull') {
             steps {
-               git 'https://github.com/mayurmwagh/student-ui.git'
-            }
-        }
-        stages {
-        stage('Clean Workspace') {
-            steps {
-                sh 'clean workspace'
+                git 'https://github.com/mayurmwagh/student-ui.git'
             }
         }
         stage('build') {
