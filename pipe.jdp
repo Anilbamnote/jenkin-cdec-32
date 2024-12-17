@@ -14,9 +14,9 @@ pipeline {
 
         stage('test') {
             steps {
-               echo "test successful"
+               
+               sh '/opt/apache-maven/bin/mvn sonar:sonar -Dsonar.projectKey=studentapp -Dsonar.host.url=http://52.38.158.156:9000 -Dsonar.login=c1e82058a21ef8169021788bf19ba1dcac46dfeb'
             }
-        }
         stage('deploy') {
             steps {
                 echo "deploy successful"
